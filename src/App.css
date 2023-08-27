@@ -1,0 +1,78 @@
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.parentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px 0px 30px 0px;
+}
+
+.green-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 300px;
+    width: 30vw;
+    background-color: green;
+    margin: 0 2px;
+    border-radius: 50px;
+}
+
+.blue-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 300px;
+    width: 30vw;
+    background-color: blue;
+    margin: 0 2px;
+    border-radius: 50px;
+}
+
+.orange-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 300px;
+    width: 30vw;
+    background-color: orange;
+    margin: 0 2px;
+    border-radius: 50px;
+}
+
+.best-selling-tv {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.product-picture {
+    display: flex;
+    flex-basis: 100px;
+}
+
+.picture-size {
+    display: flex;
+    width: 350px;
+    margin: 0 20px 0 0;
+}
+
+.specs-class {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-class {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+}
+
+img {
+    width: 20px;
+}

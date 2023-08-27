@@ -5,5 +5,3 @@ export function amountToBeSold () {
 
 return amountOfTVBought() - amountOfTvSold();
 }
-
-console.log(amountToBeSold())
