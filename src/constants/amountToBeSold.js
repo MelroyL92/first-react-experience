@@ -1,10 +1,9 @@
-const amountOfTVBought = require('./amountBought.js');
-const amountOfTvSold = require('./helperSoldTV.js');
+import {amountOfTvSold} from "./helperSoldTV.js";
+import {amountOfTVBought} from "./amountBought.js";
 
+export function amountToBeSold () {
 
-function amountToBeSold () {
-    const leftover = amountOfTVBought() - amountOfTvSold();
-    return leftover;
+return amountOfTVBought() - amountOfTvSold();
 }
 
 console.log(amountToBeSold())
