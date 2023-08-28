@@ -59,7 +59,7 @@ h1 {
 .picture-size {
     display: flex;
     width: 350px;
-    margin: 0 20px 0 0;
+    margin: 20px 20px 20px 0;
 }
 
 .specs-class {
@@ -72,6 +72,9 @@ h1 {
     width: 500px;
     justify-content: space-between;
 }
+
+
+
 
 img {
     width: 20px;

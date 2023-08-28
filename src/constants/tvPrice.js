@@ -1,6 +1,6 @@
 import {allTV} from "./helperTVString.js"
 
 
-export function priceOfTV() {
-    return `€${allTV[0].price}`
+export function priceOfTV(array) {
+    return `€${allTV[array].price}`
 }

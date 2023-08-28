@@ -7,10 +7,8 @@ export const allTV = bestSellingTVArray.concat(inventory); // twee array's samen
 
 export function tvName(array) {
 
-    return `${allTV[0].brand} ${allTV[0].type} ${allTV[0].name}`
+    return `${allTV[array].brand} ${allTV[array].type} ${allTV[array].name}`
 }
 
 
-
-
-//
+console.log(allTV)
