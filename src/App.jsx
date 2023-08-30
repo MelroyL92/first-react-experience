@@ -1,28 +1,33 @@
 import './App.css';
-import {amountOfTvSold} from './constants/helperSoldTV.js'
+import {amountOfTvSold, numbersToAdd} from './constants/helperSoldTV.js'
 import {amountOfTVBought} from "./constants/amountBought.js";
 import {amountToBeSold} from "./constants/amountToBeSold.js";
-import {tvName} from "./constants/helperTVString.js";
+import {allTV, tvName} from "./constants/helperTVString.js";
 import {priceOfTV} from "./constants/tvPrice.js";
 import {tvSize} from "./constants/tvSize.js";
 import {tvImage} from "./constants/tvImage.js";
-import checkImage from './assets/check.png'
-import minusImage from './assets/minus.png'
+import checkImage from './assets/check.png';
+import minusImage from './assets/minus.png';
+import {comparePrice, compareRefresh, compareSoldItems} from "./constants/assets/calculations.js";
+
+
 
 
 function App() {
 
-
-    function meestVerkocht(meeste) {
-        console.log("deze wordt het" + meeste + " verkocht")
+    function meestVerkocht() {
+        const sortedItems = [...allTV].sort(compareSoldItems);
+        console.log(sortedItems);
     }
 
-    function goedkoopste(goedkoopste) {
-        console.log("deze zijn het " + goedkoopste)
+    function goedkoopste() {
+        const sortedItems = [...allTV].sort(comparePrice);
+        console.log(sortedItems)
     }
 
-    function sport(sport) {
-        console.log("deze wordt het meeste gebruikt voor " + sport)
+    function sport() {
+        const sortedItems = [...allTV].sort(compareRefresh);
+        console.log(sortedItems);
     }
 
     return (
@@ -44,7 +49,7 @@ function App() {
           </div>
 
       <h2>Best selling tv</h2>
-          <div className={"best-selling-tv"}>
+          <div className={"main-container"}>
               <div className={"product-picture"}>
                   <img src={tvImage(0)} alt="image-of-a-tv" className={"picture-size"}/>
               </div>
@@ -75,11 +80,11 @@ function App() {
           <div>
               <h2>Alle tv's</h2>
               <div className={"button-class"}>
-                  <button type= "button" onClick={() => meestVerkocht("meeste")}>Meest verkocht eerst</button>
-                  <button type= "button" onClick={() => goedkoopste("goedkoopste")}>Goedkoopste eerst</button>
-                  <button type= "button" onClick={() => sport("sport")}>meest geschikt voor sport</button>
+                  <button type= "button" onClick={() => meestVerkocht("")}>Meest verkocht eerst</button>
+                  <button type= "button" onClick={() => goedkoopste("")}>Goedkoopste eerst</button>
+                  <button type= "button" onClick={() => sport("")}>meest geschikt voor sport</button>
               </div>
-              <div className={"best-selling-tv"}>
+              <div className={"main-container"}>
                   <div className={"product-picture"}>
                       <img src={tvImage(1)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
@@ -88,7 +93,6 @@ function App() {
                       <p>{priceOfTV(1)}</p>
                       <p>{tvSize(1)}</p>
                       <div className={"specs-class"}>
-
                           <div>
                               <img src={checkImage} alt="Check Image" />
                               wifi</div>
@@ -100,7 +104,7 @@ function App() {
                               <img src={checkImage} alt="Check Image" />
                               HDR</div>
                           <div >
-                              <img src={checkImage} alt="Check Image" />
+                              <img src={minusImage} alt="unchecked Image" />
                               bluetooth</div>
                           <div>
                               <img src={minusImage} alt="unchecked Image" />
@@ -108,7 +112,7 @@ function App() {
                       </div>
                   </div>
               </div>
-              <div className={"best-selling-tv"}>
+              <div className={"main-container"}>
                   <div className={"product-picture"}>
                       <img src={tvImage(2)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
@@ -125,10 +129,10 @@ function App() {
                               speech
                           </div>
                           <div >
-                              <img src={checkImage} alt="Check Image" />
+                              <img src={minusImage} alt="unchecked Image" />
                               HDR</div>
                           <div >
-                              <img src={checkImage} alt="Check Image" />
+                              <img src={minusImage} alt="unchecked Image" />
                               bluetooth</div>
                           <div>
                               <img src={minusImage} alt="unchecked Image" />
@@ -136,7 +140,7 @@ function App() {
                       </div>
                   </div>
               </div>
-              <div className={"best-selling-tv"}>
+              <div className={"main-container"}>
                   <div className={"product-picture"}>
                       <img src={tvImage(3)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
@@ -149,7 +153,7 @@ function App() {
                               <img src={checkImage} alt="Check Image" />
                               wifi</div>
                           <div>
-                              <img src={minusImage} alt="unchecked Image" />
+                              <img src={checkImage} alt="Check Image" />
                               speech
                           </div>
                           <div >
@@ -164,7 +168,7 @@ function App() {
                       </div>
                   </div>
               </div>
-              <div className={"best-selling-tv"}>
+              <div className={"main-container"}>
                   <div className={"product-picture"}>
                       <img src={tvImage(4)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
@@ -177,7 +181,7 @@ function App() {
                               <img src={checkImage} alt="Check Image" />
                               wifi</div>
                           <div>
-                              <img src={minusImage} alt="unchecked Image" />
+                              <img src={checkImage} alt="Check Image" />
                               speech
                           </div>
                           <div >
@@ -192,12 +196,6 @@ function App() {
                       </div>
                   </div>
               </div>
-
-
-
-
-
-
           </div>
       </>
   )

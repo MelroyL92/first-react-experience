@@ -1,7 +1,7 @@
 import {bestSellingTv, inventory} from "./inventory.js";
 
 
-const numbersToAdd = inventory.map(tvSold => tvSold.sold);
+export const numbersToAdd = inventory.map(tvSold => tvSold.sold);
 const bestTV = bestSellingTv.sold;
 
 

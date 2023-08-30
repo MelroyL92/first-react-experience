@@ -10,5 +10,3 @@ export function tvName(array) {
     return `${allTV[array].brand} ${allTV[array].type} ${allTV[array].name}`
 }
 
-
-console.log(allTV)
