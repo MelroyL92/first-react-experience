@@ -2,7 +2,7 @@ import {bestSellingTv, inventory} from "./inventory.js";
 
 
 const originalStockBestTV = bestSellingTv.originalStock;
-const originalStockTV = inventory.map(tvstock => tvstock.originalStock);
+const originalStockTV = inventory.map(tvStock => tvStock.originalStock);
 
 export function amountOfTVBought() {
     let sum = 0;

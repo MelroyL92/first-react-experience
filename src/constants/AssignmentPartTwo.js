@@ -36,6 +36,8 @@ for (let i = 0; i < allTV.length; i++) {
     }
 }
 
+const tvBrand = allTV.map(tv =>tv.brand);
+
 //Assignment 1F
 //const ambilightTV = []
 

@@ -2,6 +2,7 @@
 h1 {
     display: flex;
     justify-content: center;
+
 }
 
 
@@ -10,7 +11,6 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 2px 0px 30px 0px;
 }
 
 .green-container {
@@ -18,10 +18,10 @@ h1 {
     align-items: center;
     flex-direction: column;
     flex-basis: 300px;
-    width: 30vw;
-    background-color: green;
+    background-color: lightgreen;
     margin: 0 2px;
     border-radius: 50px;
+    border: 1px solid green;
 }
 
 .blue-container {
@@ -29,8 +29,8 @@ h1 {
     align-items: center;
     flex-direction: column;
     flex-basis: 300px;
-    width: 30vw;
-    background-color: blue;
+    background-color: lightblue;
+    border: 1px solid blue;
     margin: 0 2px;
     border-radius: 50px;
 }
@@ -40,20 +40,24 @@ h1 {
     align-items: center;
     flex-direction: column;
     flex-basis: 300px;
-    width: 30vw;
-    background-color: orange;
+    background-color: lightsalmon;
+    border: 1px solid orange;
     margin: 0 2px;
     border-radius: 50px;
 }
 
 .main-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
+    width: 48vw;
+
 }
 
 .product-picture {
     display: flex;
     flex-basis: 100px;
+
 }
 
 .picture-size {
@@ -62,18 +66,26 @@ h1 {
     margin: 20px 20px 20px 0;
 }
 
-.specs-class {
+.options-class {
     display: flex;
     justify-content: space-between;
     width: 400px;
 }
 
-.button-class {
+.button-container {
     display: flex;
-    width: 500px;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-basis: 600px;
 }
 
+.button-class {
+    display: flex;
+    border-radius: 10px;
+    flex-basis: 150px;
+    align-items: center ;
+    background-color: lightgrey;
+
+}
 
 
 

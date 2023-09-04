@@ -1,5 +1,5 @@
 import './App.css';
-import {amountOfTvSold, numbersToAdd} from './constants/helperSoldTV.js'
+import {amountOfTvSold} from './constants/helperSoldTV.js'
 import {amountOfTVBought} from "./constants/amountBought.js";
 import {amountToBeSold} from "./constants/amountToBeSold.js";
 import {allTV, tvName} from "./constants/helperTVString.js";
@@ -30,6 +30,46 @@ function App() {
         console.log(sortedItems);
     }
 
+    function checkAndMinus(array) {
+        const availableOptions = allTV[array].options.map((option) => {
+            if (option.applicable === true) {
+                switch (option.name) {
+                    case "wifi":
+                    case "speech":
+                    case "hdr":
+                    case "bluetooth":
+                    case "ambilight":
+                        return (
+                            <div key={`${option.name}-${allTV[array].type}` }>
+                                <img src={checkImage} alt="Check Image" />
+                                {option.name}
+                            </div>
+                        );
+                    default:
+                        return null; // Return null for unhandled options
+                }
+            } else {
+                return (
+                    <div key={`${option.name}-${allTV[array].type}`}>
+                        <img src={minusImage} alt="Minus Image" />
+                        {option.name.toLowerCase()}
+                    </div>
+                );
+            }
+        });
+
+        return (
+            <div className={"options-class"}>
+                {availableOptions}
+            </div>
+        );
+    }
+
+
+
+
+
+
     return (
       <>
       <h1>Verkoopoverzicht tv!</h1>
@@ -57,32 +97,15 @@ function App() {
                   <p>{tvName(0)}</p>
                   <p>{priceOfTV(0)}</p>
                   <p>{tvSize(0)}</p>
-                  <div className={"specs-class"}>
-                  <div>
-                      <img src={checkImage} alt="Check Image" />
-                      wifi</div>
-                  <div>
-                      <img src={minusImage} alt="unchecked Image" />
-                      speech
-                  </div>
-                  <div >
-                      <img src={checkImage} alt="Check Image" />
-                      HDR</div>
-                  <div >
-                      <img src={checkImage} alt="Check Image" />
-                      bluetooth</div>
-                  <div>
-                      <img src={minusImage} alt="unchecked Image" />
-                      ambilight</div>
-                  </div>
+                  <div>{checkAndMinus(0)}</div>
               </div>
           </div>
           <div>
               <h2>Alle tv's</h2>
-              <div className={"button-class"}>
-                  <button type= "button" onClick={() => meestVerkocht("")}>Meest verkocht eerst</button>
-                  <button type= "button" onClick={() => goedkoopste("")}>Goedkoopste eerst</button>
-                  <button type= "button" onClick={() => sport("")}>meest geschikt voor sport</button>
+              <div className={"button-container"}>
+                  <button type= "button" className={"button-class"} onClick={() => meestVerkocht("")}>Meest verkocht eerst</button>
+                  <button type= "button" className={"button-class"} onClick={() => goedkoopste("")}>Goedkoopste eerst</button>
+                  <button type= "button" className={"button-class"} onClick={() => sport("")}>meest geschikt voor sport</button>
               </div>
               <div className={"main-container"}>
                   <div className={"product-picture"}>
@@ -92,24 +115,7 @@ function App() {
                       <p>{tvName(1)}</p>
                       <p>{priceOfTV(1)}</p>
                       <p>{tvSize(1)}</p>
-                      <div className={"specs-class"}>
-                          <div>
-                              <img src={checkImage} alt="Check Image" />
-                              wifi</div>
-                          <div>
-                              <img src={minusImage} alt="unchecked Image" />
-                              speech
-                          </div>
-                          <div >
-                              <img src={checkImage} alt="Check Image" />
-                              HDR</div>
-                          <div >
-                              <img src={minusImage} alt="unchecked Image" />
-                              bluetooth</div>
-                          <div>
-                              <img src={minusImage} alt="unchecked Image" />
-                              ambilight</div>
-                      </div>
+                      <div>{checkAndMinus(1)}</div>
                   </div>
               </div>
               <div className={"main-container"}>
@@ -120,24 +126,7 @@ function App() {
                       <p>{tvName(2)}</p>
                       <p>{priceOfTV(2)}</p>
                       <p>{tvSize(2)}</p>
-                      <div className={"specs-class"}>
-                          <div>
-                              <img src={checkImage} alt="Check Image" />
-                              wifi</div>
-                          <div>
-                              <img src={minusImage} alt="unchecked Image" />
-                              speech
-                          </div>
-                          <div >
-                              <img src={minusImage} alt="unchecked Image" />
-                              HDR</div>
-                          <div >
-                              <img src={minusImage} alt="unchecked Image" />
-                              bluetooth</div>
-                          <div>
-                              <img src={minusImage} alt="unchecked Image" />
-                              ambilight</div>
-                      </div>
+                      <div>{checkAndMinus(2)}</div>
                   </div>
               </div>
               <div className={"main-container"}>
@@ -148,24 +137,7 @@ function App() {
                       <p>{tvName(3)}</p>
                       <p>{priceOfTV(3)}</p>
                       <p>{tvSize(3)}</p>
-                      <div className={"specs-class"}>
-                          <div>
-                              <img src={checkImage} alt="Check Image" />
-                              wifi</div>
-                          <div>
-                              <img src={checkImage} alt="Check Image" />
-                              speech
-                          </div>
-                          <div >
-                              <img src={checkImage} alt="Check Image" />
-                              HDR</div>
-                          <div >
-                              <img src={checkImage} alt="Check Image" />
-                              bluetooth</div>
-                          <div>
-                              <img src={minusImage} alt="unchecked Image" />
-                              ambilight</div>
-                      </div>
+                      <div>{checkAndMinus(3)}</div>
                   </div>
               </div>
               <div className={"main-container"}>
@@ -176,24 +148,51 @@ function App() {
                       <p>{tvName(4)}</p>
                       <p>{priceOfTV(4)}</p>
                       <p>{tvSize(4)}</p>
-                      <div className={"specs-class"}>
-                          <div>
-                              <img src={checkImage} alt="Check Image" />
-                              wifi</div>
-                          <div>
-                              <img src={checkImage} alt="Check Image" />
-                              speech
-                          </div>
-                          <div >
-                              <img src={checkImage} alt="Check Image" />
-                              HDR</div>
-                          <div >
-                              <img src={checkImage} alt="Check Image" />
-                              bluetooth</div>
-                          <div>
-                              <img src={minusImage} alt="unchecked Image" />
-                              ambilight</div>
-                      </div>
+                      <div>{checkAndMinus(4)}</div>
+                  </div>
+              </div>
+              <div className={"main-container"}>
+                  <div className={"product-picture"}>
+                      <img src={tvImage(5)} alt="image-of-a-tv" className={"picture-size"}/>
+                  </div>
+                  <div className={"product-information"}>
+                      <p>{tvName(5)}</p>
+                      <p>{priceOfTV(5)}</p>
+                      <p>{tvSize(5)}</p>
+                      <div>{checkAndMinus(5)}</div>
+                  </div>
+              </div>
+              <div className={"main-container"}>
+                  <div className={"product-picture"}>
+                      <img src={tvImage(6)} alt="image-of-a-tv" className={"picture-size"}/>
+                  </div>
+                  <div className={"product-information"}>
+                      <p>{tvName(6)}</p>
+                      <p>{priceOfTV(6)}</p>
+                      <p>{tvSize(6)}</p>
+                      <div>{checkAndMinus(6)}</div>
+                  </div>
+              </div>
+              <div className={"main-container"}>
+                  <div className={"product-picture"}>
+                      <img src={tvImage(7)} alt="image-of-a-tv" className={"picture-size"}/>
+                  </div>
+                  <div className={"product-information"}>
+                      <p>{tvName(7)}</p>
+                      <p>{priceOfTV(7)}</p>
+                      <p>{tvSize(7)}</p>
+                      <div>{checkAndMinus(7)}</div>
+                  </div>
+              </div>
+              <div className={"main-container"}>
+                  <div className={"product-picture"}>
+                      <img src={tvImage(8)} alt="image-of-a-tv" className={"picture-size"}/>
+                  </div>
+                  <div className={"product-information"}>
+                      <p>{tvName(8)}</p>
+                      <p>{priceOfTV(8)}</p>
+                      <p>{tvSize(8)}</p>
+                      <div>{checkAndMinus(8)}</div>
                   </div>
               </div>
           </div>

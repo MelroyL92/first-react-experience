@@ -12,5 +12,5 @@ export function tvSize(array) {
     for (let i = 0; i < tvSizes.length ; i++) {
         result.push(`${tvSizes[i]} inch (${cmToInches(tvSizes[i])} cm) | `);
     }
-    return result;
+    return result
 }
