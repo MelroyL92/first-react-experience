@@ -1,0 +1,93 @@
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.parentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.green-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 300px;
+    background-color: lightgreen;
+    margin: 0 2px;
+    border-radius: 50px;
+    border: 1px solid green;
+}
+
+.blue-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 300px;
+    background-color: lightblue;
+    border: 1px solid blue;
+    margin: 0 2px;
+    border-radius: 50px;
+}
+
+.orange-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 300px;
+    background-color: lightsalmon;
+    border: 1px solid orange;
+    margin: 0 2px;
+    border-radius: 50px;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100vw;
+
+}
+
+.product-picture {
+    display: flex;
+    flex-basis: 100px;
+
+}
+
+.picture-size {
+    display: flex;
+    width: 350px;
+    margin: 20px 20px 20px 0;
+}
+
+.options-class {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 600px;
+}
+
+.button-class {
+    display: flex;
+    border-radius: 10px;
+    flex-basis: 150px;
+    align-items: center ;
+    background-color: lightgrey;
+
+}
+
+
+
+img {
+    width: 20px;
+}
