@@ -11,8 +11,6 @@ import minusImage from './assets/minus.png';
 import {comparePrice, compareRefresh, compareSoldItems} from "./constants/assets/calculations.js";
 
 
-
-
 function App() {
 
     function meestVerkocht() {
@@ -52,7 +50,7 @@ function App() {
                 return (
                     <div key={`${option.name}-${allTV[array].type}`}>
                         <img src={minusImage} alt="Minus Image" />
-                        {option.name.toLowerCase()}
+                         {option.name.toLowerCase()}
                     </div>
                 );
             }
@@ -64,10 +62,6 @@ function App() {
             </div>
         );
     }
-
-
-
-
 
 
     return (
@@ -94,7 +88,7 @@ function App() {
                   <img src={tvImage(0)} alt="image-of-a-tv" className={"picture-size"}/>
               </div>
               <div className={"product-information"}>
-                  <p>{tvName(0)}</p>
+                  <h3>{tvName(0)}</h3>
                   <p>{priceOfTV(0)}</p>
                   <p>{tvSize(0)}</p>
                   <div>{checkAndMinus(0)}</div>
@@ -112,7 +106,7 @@ function App() {
                       <img src={tvImage(1)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(1)}</p>
+                      <h3>{tvName(1)}</h3>
                       <p>{priceOfTV(1)}</p>
                       <p>{tvSize(1)}</p>
                       <div>{checkAndMinus(1)}</div>
@@ -123,7 +117,7 @@ function App() {
                       <img src={tvImage(2)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(2)}</p>
+                      <h3>{tvName(2)}</h3>
                       <p>{priceOfTV(2)}</p>
                       <p>{tvSize(2)}</p>
                       <div>{checkAndMinus(2)}</div>
@@ -134,7 +128,7 @@ function App() {
                       <img src={tvImage(3)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(3)}</p>
+                      <h3>{tvName(3)}</h3>
                       <p>{priceOfTV(3)}</p>
                       <p>{tvSize(3)}</p>
                       <div>{checkAndMinus(3)}</div>
@@ -145,7 +139,7 @@ function App() {
                       <img src={tvImage(4)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(4)}</p>
+                      <h3>{tvName(4)}</h3>
                       <p>{priceOfTV(4)}</p>
                       <p>{tvSize(4)}</p>
                       <div>{checkAndMinus(4)}</div>
@@ -156,7 +150,7 @@ function App() {
                       <img src={tvImage(5)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(5)}</p>
+                      <h3>{tvName(5)}</h3>
                       <p>{priceOfTV(5)}</p>
                       <p>{tvSize(5)}</p>
                       <div>{checkAndMinus(5)}</div>
@@ -167,7 +161,7 @@ function App() {
                       <img src={tvImage(6)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(6)}</p>
+                      <h3>{tvName(6)}</h3>
                       <p>{priceOfTV(6)}</p>
                       <p>{tvSize(6)}</p>
                       <div>{checkAndMinus(6)}</div>
@@ -178,7 +172,7 @@ function App() {
                       <img src={tvImage(7)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(7)}</p>
+                      <h3>{tvName(7)}</h3>
                       <p>{priceOfTV(7)}</p>
                       <p>{tvSize(7)}</p>
                       <div>{checkAndMinus(7)}</div>
@@ -189,7 +183,7 @@ function App() {
                       <img src={tvImage(8)} alt="image-of-a-tv" className={"picture-size"}/>
                   </div>
                   <div className={"product-information"}>
-                      <p>{tvName(8)}</p>
+                      <h3>{tvName(8)}</h3>
                       <p>{priceOfTV(8)}</p>
                       <p>{tvSize(8)}</p>
                       <div>{checkAndMinus(8)}</div>
